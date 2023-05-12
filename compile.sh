@@ -1005,7 +1005,7 @@ function get_pecl_extension {
 cd "$BUILD_DIR/php"
 echo "[PHP] Downloading additional extensions..."
 
-get_github_extension "pthreads" "$EXT_PTHREADS_VERSION" "pmmp" "pthreads" #"v" needed for release tags because github removes the "v"
+#get_github_extension "pthreads" "$EXT_PTHREADS_VERSION" "pmmp" "pthreads" #"v" needed for release tags because github removes the "v"
 #get_pecl_extension "pthreads" "$EXT_PTHREADS_VERSION"
 
 get_github_extension "yaml" "$EXT_YAML_VERSION" "php" "pecl-file_formats-yaml"
@@ -1128,7 +1128,6 @@ $HAS_DEBUG \
 --enable-mbstring \
 --disable-mbregex \
 --enable-calendar \
---enable-pthreads \
 --enable-fileinfo \
 --with-libxml \
 --enable-xml \
