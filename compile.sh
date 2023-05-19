@@ -625,22 +625,22 @@ function build_curl {
 		--enable-optimize \
 		--enable-http \
 		--enable-ftp \
-		--disable-dict \
+		--enable-dict \
 		--enable-file \
 		--without-librtmp \
-		--disable-gopher \
-		--disable-imap \
+		--enable-gopher \
+		--enable-imap \
 		--disable-pop3 \
 		--disable-rtsp \
-		--disable-smtp \
-		--disable-telnet \
+		--enable-smtp \
+		--enable-telnet \
 		--disable-tftp \
 		--disable-ldap \
 		--disable-ldaps \
-		--without-libidn \
-		--without-libidn2 \
+		--with-libidn \
+		--with-libidn2 \
 		--without-brotli \
-		--without-nghttp2 \
+		--with-nghttp2 \
 		--without-zstd \
 		--with-zlib="$INSTALL_DIR" \
 		--with-ssl="$INSTALL_DIR" \
@@ -1126,7 +1126,7 @@ $HAS_DEBUG \
 --enable-chunkutils2 \
 --enable-morton \
 --enable-mbstring \
---disable-mbregex \
+--enable-mbregex \
 --enable-calendar \
 --enable-fileinfo \
 --with-libxml \
@@ -1135,11 +1135,11 @@ $HAS_DEBUG \
 --enable-simplexml \
 --enable-xmlreader \
 --enable-xmlwriter \
---disable-cgi \
---disable-phpdbg \
---disable-session \
---without-pear \
---without-iconv \
+--enable-cgi \
+--enable-phpdbg \
+--enable-session \
+--with-pear \
+--with-iconv \
 --with-pdo-sqlite \
 --with-pdo-mysql \
 --with-pic \
