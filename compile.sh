@@ -1176,7 +1176,7 @@ if [[ "$DO_STATIC" == "yes" ]]; then
 	sed -i=".backup" 's/--mode=link $(CC)/--mode=link $(CXX)/g' Makefile
 fi
 
-err=$( make -j $THREADS 2>&1 ) || echo 'error:'$err && echo $err >> "$DIR/install.log"  && exit $?
+make -j $THREADS >> "$DIR/install.log" 2>&1
 echo -n " installing..."
 err=$( make install 2>&1 ) || echo 'error:'$err && echo $err >> "$DIR/install.log"  && exit $?
 
