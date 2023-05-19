@@ -1177,7 +1177,7 @@ fi
 
 make -j $THREADS >> "$DIR/install.log" 2>&1
 echo -n " installing..."
-err=$( make install 2>&1 ) || echo -n 'error:'$err && echo $err >> "$DIR/install.log"  && return $err
+err=$( make install 2>&1 ) || echo -n 'error:'$err && echo $err >> "$DIR/install.log"  && exit $?
 
 function relativize_macos_library_paths {
 	IFS=$'\n' OTOOL_OUTPUT=($(otool -L "$1"))
