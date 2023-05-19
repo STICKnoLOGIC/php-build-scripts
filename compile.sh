@@ -1126,7 +1126,7 @@ $HAS_DEBUG \
 --enable-chunkutils2 \
 --enable-morton \
 --enable-mbstring \
---enable-mbregex \
+--disable-mbregex \
 --enable-calendar \
 --enable-fileinfo \
 --with-libxml \
