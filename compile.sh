@@ -1176,9 +1176,9 @@ if [[ "$DO_STATIC" == "yes" ]]; then
 	sed -i=".backup" 's/--mode=link $(CC)/--mode=link $(CXX)/g' Makefile
 fi
 
-make -j $THREADS >> "$DIR/install.log" 2>&1
+err=$( make -j $THREADS 2>&1 ) || echo 'error:'$err && echo $err >> "$DIR/install.log"  && return $?
 echo -n " installing..."
-make install >> "$DIR/install.log" 2>&1
+err=$( make install 2>&1 ) || echo 'error:'$err && echo $err >> "$DIR/install.log"  && return $?
 
 function relativize_macos_library_paths {
 	IFS=$'\n' OTOOL_OUTPUT=($(otool -L "$1"))
