@@ -1128,7 +1128,6 @@ $HAS_DEBUG \
 --enable-mbstring \
 --disable-mbregex \
 --enable-calendar \
---enable-pthreads \
 --enable-fileinfo \
 --with-libxml \
 --enable-xml \
@@ -1136,9 +1135,9 @@ $HAS_DEBUG \
 --enable-simplexml \
 --enable-xmlreader \
 --enable-xmlwriter \
---disable-cgi \
---disable-phpdbg \
---disable-session \
+--enable-cgi \
+--enable-phpdbg \
+--enable-session \
 --without-pear \
 --without-iconv \
 --with-pdo-sqlite \
