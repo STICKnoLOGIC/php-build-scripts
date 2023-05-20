@@ -1,9 +1,9 @@
 #!/bin/bash
-[ -z "$PHP_VERSION" ] && PHP_VERSION="8.1.18"
+[ -z "$PHP_VERSION" ] && PHP_VERSION="8.1.19"
 
 ZLIB_VERSION="1.2.13"
 GMP_VERSION="6.2.1"
-CURL_VERSION="curl-8_0_1"
+CURL_VERSION="curl-8_1_0"
 YAML_VERSION="0.2.5"
 LEVELDB_VERSION="1c7564468b41610da4f498430e795ca4de0931ff"
 LIBXML_VERSION="2.10.1" #2.10.2 requires automake 1.16.3, which isn't easily available on Ubuntu 20.04
@@ -12,7 +12,7 @@ LIBJPEG_VERSION="9e"
 OPENSSL_VERSION="3.1.0"
 LIBZIP_VERSION="1.9.2"
 SQLITE3_YEAR="2023"
-SQLITE3_VERSION="3410200" #3.41.2
+SQLITE3_VERSION="3420000" #3.42.0
 LIBDEFLATE_VERSION="495fee110ebb48a5eb63b75fd67e42b2955871e2" #1.18
 
 EXT_PTHREADS_VERSION_PM4="4.2.1"
@@ -626,22 +626,22 @@ function build_curl {
 		--enable-optimize \
 		--enable-http \
 		--enable-ftp \
-		--enable-dict \
+		--disable-dict \
 		--enable-file \
 		--without-librtmp \
-		--enable-gopher \
+		--disable-gopher \
 		--disable-imap \
 		--disable-pop3 \
 		--disable-rtsp \
-		--enable-smtp \
-		--enable-telnet \
+		--disable-smtp \
+		--disable-telnet \
 		--disable-tftp \
 		--disable-ldap \
 		--disable-ldaps \
-		--with-libidn \
-		--with-libidn2 \
+		--without-libidn \
+		--without-libidn2 \
 		--without-brotli \
-		--with-nghttp2 \
+		--without-nghttp2 \
 		--without-zstd \
 		--with-zlib="$INSTALL_DIR" \
 		--with-ssl="$INSTALL_DIR" \
@@ -1006,8 +1006,7 @@ function get_pecl_extension {
 cd "$BUILD_DIR/php"
 echo "[PHP] Downloading additional extensions..."
 
-#get_github_extension "pthreads" "$EXT_PTHREADS_VERSION" "pmmp" "pthreads" #"v" needed for release tags because github removes the "v"
-#get_pecl_extension "pthreads" "$EXT_PTHREADS_VERSION"
+get_github_extension "pthreads" "$EXT_PTHREADS_VERSION" "pmmp" "ext-pmmpthread" #"v" needed for release tags because github removes the "v"
 
 get_github_extension "yaml" "$EXT_YAML_VERSION" "php" "pecl-file_formats-yaml"
 #get_pecl_extension "yaml" "$EXT_YAML_VERSION"
@@ -1129,6 +1128,7 @@ $HAS_DEBUG \
 --enable-mbstring \
 --disable-mbregex \
 --enable-calendar \
+--enable-pthreads \
 --enable-fileinfo \
 --with-libxml \
 --enable-xml \
@@ -1136,11 +1136,11 @@ $HAS_DEBUG \
 --enable-simplexml \
 --enable-xmlreader \
 --enable-xmlwriter \
---enable-cgi \
---enable-phpdbg \
---enable-session \
---with-pear \
---with-iconv \
+--disable-cgi \
+--disable-phpdbg \
+--disable-session \
+--without-pear \
+--without-iconv \
 --with-pdo-sqlite \
 --with-pdo-mysql \
 --with-pic \
@@ -1178,7 +1178,7 @@ fi
 
 make -j $THREADS >> "$DIR/install.log" 2>&1
 echo -n " installing..."
-err=$( make install 2>&1 ) || echo 'error:'$err && echo $err >> "$DIR/install.log"  && exit $?
+make install >> "$DIR/install.log" 2>&1
 
 function relativize_macos_library_paths {
 	IFS=$'\n' OTOOL_OUTPUT=($(otool -L "$1"))
