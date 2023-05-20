@@ -1006,7 +1006,7 @@ function get_pecl_extension {
 cd "$BUILD_DIR/php"
 echo "[PHP] Downloading additional extensions..."
 
-get_github_extension "pthreads" "$EXT_PTHREADS_VERSION" "pmmp" "ext-pmmpthread" #"v" needed for release tags because github removes the "v"
+#get_github_extension "pthreads" "$EXT_PTHREADS_VERSION" "pmmp" "ext-pmmpthread" #"v" needed for release tags because github removes the "v"
 
 get_github_extension "yaml" "$EXT_YAML_VERSION" "php" "pecl-file_formats-yaml"
 #get_pecl_extension "yaml" "$EXT_YAML_VERSION"
@@ -1065,17 +1065,17 @@ if [ "$DO_STATIC" == "yes" ]; then
 fi
 
 
-if [ "$IS_CROSSCOMPILE" == "yes" ]; then
-	sed -i=".backup" 's/pthreads_working=no/pthreads_working=yes/' ./configure
-	if [ "$IS_WINDOWS" != "yes" ]; then
-		if [ "$COMPILE_FOR_ANDROID" == "no" ]; then
-			export LIBS="$LIBS -lpthread -ldl -lresolv"
-		else
-			export LIBS="$LIBS -lpthread -lresolv"
-		fi
-	else
-		export LIBS="$LIBS -lpthread"
-	fi
+#if [ "$IS_CROSSCOMPILE" == "yes" ]; then
+#	sed -i=".backup" 's/pthreads_working=no/pthreads_working=yes/' ./configure
+#	if [ "$IS_WINDOWS" != "yes" ]; then
+#		if [ "$COMPILE_FOR_ANDROID" == "no" ]; then
+#			export LIBS="$LIBS -lpthread -ldl -lresolv"
+#		else
+#			export LIBS="$LIBS -lpthread -lresolv"
+#		fi
+#	else
+#		export LIBS="$LIBS -lpthread"
+#	fi
 
 	mv ext/mysqlnd/config9.m4 ext/mysqlnd/config.m4
 	sed  -i=".backup" "s{ext/mysqlnd/php_mysqlnd_config.h{config.h{" ext/mysqlnd/mysqlnd_portability.h
