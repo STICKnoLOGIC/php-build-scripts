@@ -588,9 +588,6 @@ function build_openssl {
 		--prefix="$INSTALL_DIR" \
 		--openssldir="$INSTALL_DIR" \
 		--libdir="$INSTALL_DIR/lib" \
-		no-asm \
-		no-hw \
-		no-engine \
 		$EXTRA_FLAGS >> "$DIR/install.log" 2>&1
 
 		echo -n " compiling..."
@@ -626,7 +623,7 @@ function build_curl {
 		--enable-optimize \
 		--enable-http \
 		--enable-ftp \
-		--disable-dict \
+		--enable-dict \
 		--enable-file \
 		--without-librtmp \
 		--enable-gopher \
