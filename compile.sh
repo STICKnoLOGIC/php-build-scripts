@@ -628,7 +628,7 @@ function build_curl {
 		--enable-ftp \
 		--disable-dict \
 		--enable-file \
-		--with-librtmp \
+		--without-librtmp \
 		--enable-gopher \
 		--enable-imap \
 		--enable-pop3 \
@@ -638,11 +638,11 @@ function build_curl {
 		--enable-tftp \
 		--ebable-ldap \
 		--enable-ldaps \
-		--with-libidn \
-		--with-libidn2 \
-		--with-brotli \
-		--with-nghttp2 \
-		--with-zstd \
+		--without-libidn \
+		--without-libidn2 \
+		--without-brotli \
+		--without-nghttp2 \
+		--without-zstd \
 		--with-zlib="$INSTALL_DIR" \
 		--with-ssl="$INSTALL_DIR" \
 		--enable-threaded-resolver \
