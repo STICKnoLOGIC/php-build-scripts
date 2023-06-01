@@ -1121,7 +1121,7 @@ RANLIB=$RANLIB CFLAGS="$CFLAGS $FLAGS_LTO" CXXFLAGS="$CXXFLAGS $FLAGS_LTO" LDFLA
 $HAS_LIBJPEG \
 $HAS_GD \
 --with-leveldb="$INSTALL_DIR" \
---with-readline \
+--without-readline \
 $HAS_DEBUG \
 --enable-chunkutils2 \
 --enable-morton \
