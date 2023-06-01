@@ -1121,7 +1121,7 @@ RANLIB=$RANLIB CFLAGS="$CFLAGS $FLAGS_LTO" CXXFLAGS="$CXXFLAGS $FLAGS_LTO" LDFLA
 $HAS_LIBJPEG \
 $HAS_GD \
 --with-leveldb="$INSTALL_DIR" \
---without-readline \
+--with-readline \
 $HAS_DEBUG \
 --with-pthreads=/data/data/ph.STICKnoLOGIC.com.lm/app_HOME/bin/ \
 --enable-chunkutils2 \
