@@ -619,27 +619,6 @@ function build_curl {
 		cd "$curl_dir"
 		./buildconf --force >> "$DIR/install.log" 2>&1
 		RANLIB=$RANLIB ./configure --disable-dependency-tracking \
-		--enable-ipv6 \
-		--enable-optimize \
-		--enable-http \
-		--enable-ftp \
-		--enable-dict \
-		--enable-file \
-		--without-librtmp \
-		--enable-gopher \
-		--enable-imap \
-		--enable-pop3 \
-		--enable-rtsp \
-		--enable-smtp \
-		--enable-telnet \
-		--enable-tftp \
-		--ebable-ldap \
-		--enable-ldaps \
-		--without-libidn \
-		--without-libidn2 \
-		--without-brotli \
-		--without-nghttp2 \
-		--without-zstd \
 		--with-zlib="$INSTALL_DIR" \
 		--with-ssl="$INSTALL_DIR" \
 		--enable-threaded-resolver \
