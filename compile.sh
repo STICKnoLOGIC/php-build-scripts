@@ -933,7 +933,7 @@ cd "$LIB_BUILD_DIR"
 build_zlib
 build_gmp
 build_openssl
-build_curl
+#build_curl
 build_yaml
 build_leveldb
 if [ "$COMPILE_GD" == "yes" ]; then
@@ -1086,7 +1086,7 @@ fi
 
 RANLIB=$RANLIB CFLAGS="$CFLAGS $FLAGS_LTO" CXXFLAGS="$CXXFLAGS $FLAGS_LTO" LDFLAGS="$LDFLAGS $FLAGS_LTO" ./configure $PHP_OPTIMIZATION --prefix="$INSTALL_DIR" \
 --exec-prefix="$INSTALL_DIR" \
---with-curl \
+--without-curl \
 --with-zlib \
 --with-zlib \
 --with-gmp \
