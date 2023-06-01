@@ -1123,7 +1123,7 @@ $HAS_GD \
 --with-leveldb="$INSTALL_DIR" \
 --without-readline \
 $HAS_DEBUG \
---with-pthread \
+--with-pthreads \
 --enable-chunkutils2 \
 --enable-morton \
 --enable-mbstring \
