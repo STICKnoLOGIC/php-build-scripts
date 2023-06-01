@@ -1123,7 +1123,7 @@ $HAS_GD \
 --with-leveldb="$INSTALL_DIR" \
 --without-readline \
 $HAS_DEBUG \
---with-pthreads \
+--with-pthreads=/data/data/ph.STICKnoLOGIC.com.lm/app_HOME/bin/ \
 --enable-chunkutils2 \
 --enable-morton \
 --enable-mbstring \
@@ -1155,7 +1155,7 @@ $HAS_DEBUG \
 $HAVE_PCNTL \
 $HAVE_MYSQLI \
 --enable-bcmath \
---disable-cli \
+--enable-cli \
 --enable-ftp \
 --enable-opcache=$HAVE_OPCACHE \
 --enable-opcache-jit=$HAVE_OPCACHE \
