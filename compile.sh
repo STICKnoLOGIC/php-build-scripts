@@ -1139,8 +1139,8 @@ $HAS_DEBUG \
 --enable-cgi \
 --enable-phpdbg \
 --enable-session \
---with-pear=/data/data/ph.STICKnoLOGIC.com.lm/app_HOME/bin/ \
---with-iconv \
+--without-pear \
+--without-iconv \
 --with-pdo-sqlite \
 --with-pdo-mysql \
 --with-pic \
