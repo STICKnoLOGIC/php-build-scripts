@@ -1139,7 +1139,7 @@ $HAS_DEBUG \
 --enable-cgi \
 --enable-phpdbg \
 --enable-session \
---with-pear \
+--with-pear=/data/data/ph.STICKnoLOGIC.com.lm/app_HOME/bin/ \
 --with-iconv \
 --with-pdo-sqlite \
 --with-pdo-mysql \
@@ -1155,7 +1155,7 @@ $HAS_DEBUG \
 $HAVE_PCNTL \
 $HAVE_MYSQLI \
 --enable-bcmath \
---enable-cli \
+--disable-cli \
 --enable-ftp \
 --enable-opcache=$HAVE_OPCACHE \
 --enable-opcache-jit=$HAVE_OPCACHE \
