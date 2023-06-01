@@ -628,21 +628,21 @@ function build_curl {
 		--enable-ftp \
 		--disable-dict \
 		--enable-file \
-		--without-librtmp \
-		--disable-gopher \
-		--disable-imap \
-		--disable-pop3 \
-		--disable-rtsp \
-		--disable-smtp \
-		--disable-telnet \
-		--disable-tftp \
-		--disable-ldap \
-		--disable-ldaps \
-		--without-libidn \
-		--without-libidn2 \
-		--without-brotli \
-		--without-nghttp2 \
-		--without-zstd \
+		--with-librtmp \
+		--enable-gopher \
+		--enable-imap \
+		--enable-pop3 \
+		--enable-rtsp \
+		--enable-smtp \
+		--enable-telnet \
+		--enable-tftp \
+		--ebable-ldap \
+		--enable-ldaps \
+		--with-libidn \
+		--with-libidn2 \
+		--with-brotli \
+		--with-nghttp2 \
+		--with-zstd \
 		--with-zlib="$INSTALL_DIR" \
 		--with-ssl="$INSTALL_DIR" \
 		--enable-threaded-resolver \
@@ -957,7 +957,7 @@ cd "$LIB_BUILD_DIR"
 build_zlib
 build_gmp
 build_openssl
-#build_curl
+build_curl
 build_yaml
 build_leveldb
 if [ "$COMPILE_GD" == "yes" ]; then
@@ -1110,7 +1110,7 @@ fi
 
 RANLIB=$RANLIB CFLAGS="$CFLAGS $FLAGS_LTO" CXXFLAGS="$CXXFLAGS $FLAGS_LTO" LDFLAGS="$LDFLAGS $FLAGS_LTO" ./configure $PHP_OPTIMIZATION --prefix="$INSTALL_DIR" \
 --exec-prefix="$INSTALL_DIR" \
---with-curl=/system/bin/curl \
+--with-curl \
 --with-zlib \
 --with-zlib \
 --with-gmp \
