@@ -1151,11 +1151,11 @@ $HAS_DEBUG \
 --enable-static=yes \
 --enable-shmop \
 --enable-zts \
---disable-short-tags \
+--enable-short-tags \
 $HAVE_PCNTL \
 $HAVE_MYSQLI \
 --enable-bcmath \
---disable-cli \
+--enable-cli \
 --enable-ftp \
 --enable-opcache=$HAVE_OPCACHE \
 --enable-opcache-jit=$HAVE_OPCACHE \
