@@ -1123,6 +1123,7 @@ $HAS_GD \
 --with-leveldb="$INSTALL_DIR" \
 --without-readline \
 $HAS_DEBUG \
+--with-pthread \
 --enable-chunkutils2 \
 --enable-morton \
 --enable-mbstring \
@@ -1138,8 +1139,8 @@ $HAS_DEBUG \
 --enable-cgi \
 --enable-phpdbg \
 --enable-session \
---without-pear \
---without-iconv \
+--with-pear \
+--with-iconv \
 --with-pdo-sqlite \
 --with-pdo-mysql \
 --with-pic \
