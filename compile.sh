@@ -626,18 +626,18 @@ function build_curl {
 		--enable-optimize \
 		--enable-http \
 		--enable-ftp \
-		--disable-dict \
+		--ebable-dict \
 		--enable-file \
 		--without-librtmp \
-		--disable-gopher \
-		--disable-imap \
-		--disable-pop3 \
-		--disable-rtsp \
-		--disable-smtp \
-		--disable-telnet \
-		--disable-tftp \
-		--disable-ldap \
-		--disable-ldaps \
+		--enable-gopher \
+		--enable-imap \
+		--enable-pop3 \
+		--enable-rtsp \
+		--enable-smtp \
+		--enable-telnet \
+		--enable-tftp \
+		--enable-ldap \
+		--enable-ldaps \
 		--without-libidn \
 		--without-libidn2 \
 		--without-brotli \
@@ -1110,7 +1110,7 @@ fi
 
 RANLIB=$RANLIB CFLAGS="$CFLAGS $FLAGS_LTO" CXXFLAGS="$CXXFLAGS $FLAGS_LTO" LDFLAGS="$LDFLAGS $FLAGS_LTO" ./configure $PHP_OPTIMIZATION --prefix="$INSTALL_DIR" \
 --exec-prefix="$INSTALL_DIR" \
---with-curl=/system/bin \
+--with-curl \
 --with-zlib \
 --with-zlib \
 --with-gmp \
@@ -1121,7 +1121,7 @@ RANLIB=$RANLIB CFLAGS="$CFLAGS $FLAGS_LTO" CXXFLAGS="$CXXFLAGS $FLAGS_LTO" LDFLA
 $HAS_LIBJPEG \
 $HAS_GD \
 --with-leveldb="$INSTALL_DIR" \
---without-readline \
+--with-readline \
 $HAS_DEBUG \
 --enable-chunkutils2 \
 --enable-morton \
