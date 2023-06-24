@@ -119,7 +119,7 @@ if [ $? -eq 0 ]; then
 else
 	type curl >> "$DIR/install.log" 2>&1
 	if [ $? -eq 0 ]; then
-		alias _download_file="curl --insecure --silent --show-error --location --globoff"
+		alias _download_file="curl -L --insecure --silent --show-error --location --globoff"
 	else
 		echo "error, curl or wget not found"
 		exit 1
