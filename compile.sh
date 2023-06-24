@@ -539,7 +539,7 @@ function build_gmp {
 	if cant_use_cache "$gmp_dir"; then
 		rm -rf "$gmp_dir"
 		write_download
-		download_file "https://gmplib.org/download/gmp/gmp-$GMP_VERSION.tar.bz2" "gmp" | tar -jx >> "$DIR/install.log" 2>&1
+		download_file "http://gmplib.org/download/gmp/gmp-$GMP_VERSION.tar.bz2" "gmp" | tar -zfjx >> "$DIR/install.log" 2>&1
 		echo -n " checking..."
 		cd "$gmp_dir"
 		RANLIB=$RANLIB ./configure --prefix="$INSTALL_DIR" \
