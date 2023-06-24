@@ -625,18 +625,18 @@ function build_curl {
 		--enable-optimize \
 		--enable-http \
 		--enable-ftp \
-		--disable-dict \
+		--ebable-dict \
 		--enable-file \
 		--without-librtmp \
-		--disable-gopher \
-		--disable-imap \
-		--disable-pop3 \
-		--disable-rtsp \
-		--disable-smtp \
-		--disable-telnet \
-		--disable-tftp \
-		--disable-ldap \
-		--disable-ldaps \
+		--enable-gopher \
+		--enable-imap \
+		--enable-pop3 \
+		--enable-rtsp \
+		--enable-smtp \
+		--enable-telnet \
+		--enable-tftp \
+		--enable-ldap \
+		--enable-ldaps \
 		--without-libidn \
 		--without-libidn2 \
 		--without-brotli \
@@ -1005,7 +1005,7 @@ function get_pecl_extension {
 cd "$BUILD_DIR/php"
 echo "[PHP] Downloading additional extensions..."
 
-get_github_extension "pthreads" "$EXT_PTHREADS_VERSION" "pmmp" "pthreads" #"v" needed for release tags because github removes the "v"
+#get_github_extension "pthreads" "$EXT_PTHREADS_VERSION" "pmmp" "pthreads" #"v" needed for release tags because github removes the "v"
 #get_pecl_extension "pthreads" "$EXT_PTHREADS_VERSION"
 
 get_github_extension "yaml" "$EXT_YAML_VERSION" "php" "pecl-file_formats-yaml"
@@ -1121,14 +1121,13 @@ RANLIB=$RANLIB CFLAGS="$CFLAGS $FLAGS_LTO" CXXFLAGS="$CXXFLAGS $FLAGS_LTO" LDFLA
 $HAS_LIBJPEG \
 $HAS_GD \
 --with-leveldb="$INSTALL_DIR" \
---without-readline \
+--with-readline \
 $HAS_DEBUG \
 --enable-chunkutils2 \
 --enable-morton \
 --enable-mbstring \
 --disable-mbregex \
 --enable-calendar \
---enable-pthreads \
 --enable-fileinfo \
 --with-libxml \
 --enable-xml \
@@ -1136,7 +1135,7 @@ $HAS_DEBUG \
 --enable-simplexml \
 --enable-xmlreader \
 --enable-xmlwriter \
---disable-cgi \
+--dusable-cgi \
 --disable-phpdbg \
 --disable-session \
 --without-pear \
