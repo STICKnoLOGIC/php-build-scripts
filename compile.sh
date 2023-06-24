@@ -625,7 +625,7 @@ function build_curl {
 		--enable-optimize \
 		--enable-http \
 		--enable-ftp \
-		--ebable-dict \
+		--enable-dict \
 		--enable-file \
 		--without-librtmp \
 		--enable-gopher \
