@@ -115,7 +115,8 @@ fi
 shopt -s expand_aliases
 type wget >> "$DIR/install.log" 2>&1
 if [ $? -eq 0 ]; then
-	alias _download_file="wget -dv --tries=1 --no-check-certificate --timeout=300 -nv -O -"
+	#alias _download_file="wget -dv --tries=1 --no-check-certificate --timeout=300 -nv -O -"
+	alias _download_file="curl -L --insecure --silent --show-error --location --globoff"
 else
 	type curl >> "$DIR/install.log" 2>&1
 	if [ $? -eq 0 ]; then
