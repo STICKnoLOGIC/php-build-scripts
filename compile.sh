@@ -619,6 +619,27 @@ function build_curl {
 		cd "$curl_dir"
 		./buildconf --force >> "$DIR/install.log" 2>&1
 		RANLIB=$RANLIB ./configure --disable-dependency-tracking \
+                --enable-ipv6 \
+		--enable-optimize \
+		--enable-http \
+		--enable-ftp \
+		--ebable-dict \
+		--enable-file \
+		--without-librtmp \
+		--enable-gopher \
+		--enable-imap \
+		--enable-pop3 \
+		--enable-rtsp \
+		--enable-smtp \
+		--enable-telnet \
+		--enable-tftp \
+		--enable-ldap \
+		--enable-ldaps \
+		--without-libidn \
+		--without-libidn2 \
+		--without-brotli \
+		--without-nghttp2 \
+		--without-zstd \
 		--with-zlib="$INSTALL_DIR" \
 		--with-ssl="$INSTALL_DIR" \
 		--enable-threaded-resolver \
@@ -1086,7 +1107,7 @@ fi
 
 RANLIB=$RANLIB CFLAGS="$CFLAGS $FLAGS_LTO" CXXFLAGS="$CXXFLAGS $FLAGS_LTO" LDFLAGS="$LDFLAGS $FLAGS_LTO" ./configure $PHP_OPTIMIZATION --prefix="$INSTALL_DIR" \
 --exec-prefix="$INSTALL_DIR" \
---with-curl="/system/bin/curl" \
+--with-curl \
 --with-zlib \
 --with-zlib \
 --with-gmp \
@@ -1097,7 +1118,7 @@ RANLIB=$RANLIB CFLAGS="$CFLAGS $FLAGS_LTO" CXXFLAGS="$CXXFLAGS $FLAGS_LTO" LDFLA
 $HAS_LIBJPEG \
 $HAS_GD \
 --with-leveldb="$INSTALL_DIR" \
---without-readline \
+--with-readline \
 $HAS_DEBUG \
 --enable-chunkutils2 \
 --enable-morton \
