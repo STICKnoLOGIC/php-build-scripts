@@ -953,8 +953,8 @@ cd "$LIB_BUILD_DIR"
 
 build_zlib
 build_gmp
-#build_openssl
-#build_curl
+build_openssl
+build_curl
 build_yaml
 build_leveldb
 if [ "$COMPILE_GD" == "yes" ]; then
