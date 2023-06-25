@@ -259,7 +259,7 @@ if [ "$PM_VERSION_MAJOR" -ge 5 ]; then
 else
 	EXT_PTHREADS_VERSION="$EXT_PTHREADS_VERSION_PM4"
 fi
-write_out "opt" "Compiling with configuration for PocketMine-MP $PM_VERSION_MAJOR"
+write_out "opt" "Compiling with configuration for Project:LARA $PM_VERSION_MAJOR"
 
 GMP_ABI=""
 TOOLCHAIN_PREFIX=""
@@ -365,7 +365,7 @@ else
 			fi
 			GMP_ABI="64"
 		else
-			echo "[ERROR] PocketMine-MP is no longer supported on 32-bit systems"
+			echo "[ERROR] Project:LARA is no longer supported on 32-bit systems"
 			exit 1
 		fi
 	fi
@@ -1297,5 +1297,4 @@ if [ "$DO_CLEANUP" == "yes" ]; then
 fi
 
 date >> "$DIR/install.log" 2>&1
-
 echo "[Project:LARA] If it doesn't work, please send the \"install.log\" file to the Bug Tracker."
