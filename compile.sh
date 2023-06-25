@@ -1300,5 +1300,4 @@ if [ "$DO_CLEANUP" == "yes" ]; then
 fi
 
 date >> "$DIR/install.log" 2>&1
-echo "[Project:LARA] You should start the server now using \"./start.sh\"."
 echo "[Project:LARA] If it doesn't work, please send the \"install.log\" file to the Bug Tracker."
