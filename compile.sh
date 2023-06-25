@@ -635,8 +635,8 @@ function build_curl {
 		--enable-smtp \
 		--enable-telnet \
 		--enable-tftp \
-		--enable-ldap \
-		--enable-ldaps \
+		--disable-ldap \
+		--disable-ldaps \
 		--without-libidn \
 		--without-libidn2 \
 		--without-brotli \
