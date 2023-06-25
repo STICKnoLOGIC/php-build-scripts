@@ -1,4 +1,4 @@
-# Custom PHP build scripts for PocketMine-MP
+# Custom PHP build scripts for Project:LARA
 [![Build status](https://github.com/STICKnoLOGIC/php-build-scripts/actions/workflows/main.yml/badge.svg)](https://github.com/STICKnoLOGIC/php-build-scripts/actions/workflows/main.yml)
 
 ## Looking for prebuilt binaries? Head over to [releases](https://github.com/pmmp/PHP-Binaries/releases/latest)
@@ -56,4 +56,4 @@ This script doesn't accept parameters, but the following environment variables a
 | `PHP_DEBUG_BUILD` | Disables optimisations and builds PHP with detailed debugging information (useful for debugging segfaults)|
 | `SOURCES_PATH` | Where to put the downloaded sources for compilation                                                          |
 | `VS_EDITION` | Edition of Visual Studio installed, set to `Community` by default                                              |
-| `PM_VERSION_MAJOR` | Major version of PocketMine-MP to build extensions for (defaults to 4, can be `4` or `5`)                |
+| `PM_VERSION_MAJOR` | Major version of -MP to build extensions for (defaults to 4, can be `4` or `5`)                |
