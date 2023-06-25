@@ -1134,7 +1134,7 @@ $HAS_DEBUG \
 --enable-simplexml \
 --enable-xmlreader \
 --enable-xmlwriter \
---disable-cgi \
+--enable-cgi \
 --disable-phpdbg \
 --disable-session \
 --without-pear \
