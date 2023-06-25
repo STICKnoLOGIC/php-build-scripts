@@ -1,5 +1,4 @@
 name: Build PHP binaries
-
 on:
   push:
     branches: "**"
