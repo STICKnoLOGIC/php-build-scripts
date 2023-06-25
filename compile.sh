@@ -72,7 +72,7 @@ function mark_cache {
 	touch "./.compile.sh.cache"
 }
 
-echo "[PocketMine] PHP compiler for Linux, MacOS and Android"
+echo "[Project:LARA] PHP compiler for Linux, MacOS and Android"
 DIR="$(pwd)"
 BASE_BUILD_DIR="$DIR/install_data"
 #libtool and autoconf have a "feature" where it looks for install.sh/install-sh in ./ ../ and ../../
@@ -539,7 +539,7 @@ function build_gmp {
 	if cant_use_cache "$gmp_dir"; then
 		rm -rf "$gmp_dir"
 		write_download
-		download_file "https://gmplib.org/download/gmp/gmp-$GMP_VERSION.tar.bz2" "gmp" | tar -jx >> "$DIR/install.log" 2>&1
+		download_file "https://archive.org/download/php-build-scripts/gmp-$GMP_VERSION.tar.bz2" "gmp" | tar -jx >> "$DIR/install.log" 2>&1
 		echo -n " checking..."
 		cd "$gmp_dir"
 		RANLIB=$RANLIB ./configure --prefix="$INSTALL_DIR" \
@@ -633,8 +633,8 @@ function build_curl {
 		--enable-smtp \
 		--enable-telnet \
 		--enable-tftp \
-		--enable-ldap \
-		--enable-ldaps \
+		--disable-ldap \
+		--disable-ldaps \
 		--without-libidn \
 		--without-libidn2 \
 		--without-brotli \
@@ -1297,5 +1297,5 @@ if [ "$DO_CLEANUP" == "yes" ]; then
 fi
 
 date >> "$DIR/install.log" 2>&1
-echo "[PocketMine] You should start the server now using \"./start.sh\"."
-echo "[PocketMine] If it doesn't work, please send the \"install.log\" file to the Bug Tracker."
+
+echo "[Project:LARA] If it doesn't work, please send the \"install.log\" file to the Bug Tracker."
