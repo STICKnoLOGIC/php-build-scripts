@@ -1112,13 +1112,13 @@ RANLIB=$RANLIB CFLAGS="$CFLAGS $FLAGS_LTO" CXXFLAGS="$CXXFLAGS $FLAGS_LTO" LDFLA
 --with-zlib \
 --with-gmp \
 --with-yaml \
---without-openssl \
+--with-openssl \
 --with-zip \
 --with-libdeflate \
 $HAS_LIBJPEG \
 $HAS_GD \
 --with-leveldb="$INSTALL_DIR" \
---with-readline \
+--without-readline \
 $HAS_DEBUG \
 --enable-chunkutils2 \
 --enable-morton \
