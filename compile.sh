@@ -72,7 +72,7 @@ function mark_cache {
 	touch "./.compile.sh.cache"
 }
 
-echo "[PocketMine] PHP compiler for Linux, MacOS and Android"
+echo "[Project:LARA] PHP compiler for Linux, MacOS and Android"
 DIR="$(pwd)"
 BASE_BUILD_DIR="$DIR/install_data"
 #libtool and autoconf have a "feature" where it looks for install.sh/install-sh in ./ ../ and ../../
@@ -115,8 +115,7 @@ fi
 shopt -s expand_aliases
 type wget >> "$DIR/install.log" 2>&1
 if [ $? -eq 0 ]; then
-	#alias _download_file="wget -dv --tries=1 --no-check-certificate --timeout=300 -nv -O -"
-	alias _download_file="curl -L --insecure --silent --show-error --location --globoff"
+	alias _download_file="wget --no-check-certificate -nv -O -"
 else
 	type curl >> "$DIR/install.log" 2>&1
 	if [ $? -eq 0 ]; then
@@ -260,7 +259,7 @@ if [ "$PM_VERSION_MAJOR" -ge 5 ]; then
 else
 	EXT_PTHREADS_VERSION="$EXT_PTHREADS_VERSION_PM4"
 fi
-write_out "opt" "Compiling with configuration for PocketMine-MP $PM_VERSION_MAJOR"
+write_out "opt" "Compiling with configuration for Project:LARA-PHP $PM_VERSION_MAJOR"
 
 GMP_ABI=""
 TOOLCHAIN_PREFIX=""
@@ -366,7 +365,7 @@ else
 			fi
 			GMP_ABI="64"
 		else
-			echo "[ERROR] PocketMine-MP is no longer supported on 32-bit systems"
+			echo "[ERROR] Project:LARA-PHP is no longer supported on 32-bit systems"
 			exit 1
 		fi
 	fi
@@ -540,7 +539,7 @@ function build_gmp {
 	if cant_use_cache "$gmp_dir"; then
 		rm -rf "$gmp_dir"
 		write_download
-		download_file "http://gmplib.org/download/gmp/gmp-$GMP_VERSION.tar.bz2" "gmp" | tar -zfjx >> "$DIR/install.log" 2>&1
+		download_file "https://gmplib.org/download/gmp/gmp-$GMP_VERSION.tar.bz2" "gmp" | tar -jx >> "$DIR/install.log" 2>&1
 		echo -n " checking..."
 		cd "$gmp_dir"
 		RANLIB=$RANLIB ./configure --prefix="$INSTALL_DIR" \
@@ -1301,5 +1300,5 @@ if [ "$DO_CLEANUP" == "yes" ]; then
 fi
 
 date >> "$DIR/install.log" 2>&1
-echo "[PocketMine] You should start the server now using \"./start.sh\"."
-echo "[PocketMine] If it doesn't work, please send the \"install.log\" file to the Bug Tracker."
+echo "[Project:LARA] You should start the server now using \"./start.sh\"."
+echo "[Project:LARA] If it doesn't work, please send the \"install.log\" file to the Bug Tracker."
