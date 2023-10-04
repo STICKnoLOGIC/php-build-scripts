@@ -1126,6 +1126,7 @@ $HAS_DEBUG \
 --enable-chunkutils2 \
 --enable-morton \
 --enable-mbstring \
+--enable-intl \
 --disable-mbregex \
 --enable-calendar \
 --enable-fileinfo \
@@ -1135,7 +1136,7 @@ $HAS_DEBUG \
 --enable-simplexml \
 --enable-xmlreader \
 --enable-xmlwriter \
---disnable-cgi \
+--disable-cgi \
 --disable-phpdbg \
 --disable-session \
 --without-pear \
