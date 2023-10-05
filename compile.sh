@@ -1145,7 +1145,7 @@ $HAS_DEBUG \
 --enable-phar \
 --enable-ctype \
 --enable-sockets \
---enable-shared=no \
+--enable-shared=yes \
 --enable-static=yes \
 --enable-shmop \
 --enable-zts \
