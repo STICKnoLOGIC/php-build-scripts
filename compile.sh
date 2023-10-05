@@ -1164,6 +1164,7 @@ $HAVE_MYSQLI \
 --enable-recursionguard \
 --enable-xxhash \
 $HAVE_VALGRIND \
+-DU_USING_ICU_NAMESPACE=1 \
 $CONFIGURE_FLAGS >> "$DIR/install.log" 2>&1
 echo -n " compiling..."
 if [ "$COMPILE_FOR_ANDROID" == "yes" ]; then
