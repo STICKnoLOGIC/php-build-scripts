@@ -1165,7 +1165,7 @@ $HAVE_MYSQLI \
 --enable-recursionguard \
 --enable-xxhash \
 $HAVE_VALGRIND \
-$CONFIGURE_FLAGS >> "$DIR/install.log" 2>&1
+$CONFIGURE_FLAGS >> "$DIR/install-php-8.0.log" 2>&1
 echo -n " compiling..."
 if [ "$COMPILE_FOR_ANDROID" == "yes" ]; then
 	sed -i=".backup" 's/-export-dynamic/-all-static/g' Makefile
